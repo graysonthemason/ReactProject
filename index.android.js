@@ -1,51 +1,26 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
-'use strict';
-import React, {
-  AppRegistry,
-  Component,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-
-class ReactProject extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
+var React = require('react-native');
+var SearchPage = require('./SearchPage');
+var styles = React.StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    flex: 1
+  }
 });
 
-AppRegistry.registerComponent('ReactProject', () => ReactProject);
+class PropertyFinderApp extends React.Component {
+  render() {
+    /* beautify preserve:start */
+    return (
+      <React.NavigatorIOS
+      style={styles.container}
+      initialRoute={{
+        title: 'Property Finder',
+        component: SearchPage
+      }}/>
+      );
+  }
+  /* beautify preserve:end */
+}
+
+React.AppRegistry.registerComponent('ReactProject', function() {
+  return PropertyFinderApp
+});
