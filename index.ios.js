@@ -8,6 +8,7 @@ var styles = React.StyleSheet.create({
 
 class PropertyFinderApp extends React.Component {
   render() {
+    /* beautify preserve:start */
     return (
       <React.NavigatorIOS
       style={styles.container}
@@ -15,8 +16,11 @@ class PropertyFinderApp extends React.Component {
         title: 'Property Finder',
         component: SearchPage
       }}/>
-    );
+      );
   }
+  /* beautify preserve:end */
 }
 
-React.AppRegistry.registerComponent('ReactProject', function() { return PropertyFinderApp });
+React.AppRegistry.registerComponent('ReactProject', function() {
+  return PropertyFinderApp
+});
